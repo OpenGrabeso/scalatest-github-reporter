@@ -17,6 +17,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Publish
-      run: |
-        printf "[github]\n  actor=${{ secrets.ORG_USERNAME }}\n  token=${{ secrets.ORG_TOKEN }}" > ~/.gitconfig
-        sbt publish
+      env:
+        ORG_TOKEN: ${{ secrets.ORG_TOKEN }}
+      run: sbt publish
