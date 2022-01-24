@@ -5,11 +5,14 @@ import net.opengrabeso.test.GitHubAnnotationsReporter._
 import org.scalatest.Reporter
 import org.scalatest.events._
 
+// https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
+// ::error file={name},line={line},endLine={endLine},title={title}::{message}
+
 object GitHubActionReporter {
   def locationString(location: Option[Location], throwable: Option[Throwable]): String = {
     loc(location, throwable) match {
       case Some((file, lineNumber)) =>
-        s"file=$file,line=$lineNumber,"
+        s"file=$file,line=$lineNumber,endLine=$lineNumber"
       case _ =>
         ""
     }
