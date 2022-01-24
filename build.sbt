@@ -1,5 +1,5 @@
 
-ThisBuild / version := "0.3.1"
+ThisBuild / version := "0.3.2"
 
 ThisBuild / scalaVersion := "2.13.8"
 
@@ -19,7 +19,7 @@ lazy val root = (project in file("."))
     githubTokenSource := TokenSource.GitConfig("github.token") || TokenSource.Environment("ORG_TOKEN"),
 
     scalacOptions ++= Seq("-deprecation", "-unchecked"),
-    crossScalaVersions := Seq("2.12.14", "2.13.8"),
+    crossScalaVersions := Seq("2.12.15", "2.13.8"),
 
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9",
 

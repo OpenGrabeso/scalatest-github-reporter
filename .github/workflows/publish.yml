@@ -19,4 +19,4 @@ jobs:
     - name: Publish
       env:
         ORG_TOKEN: ${{ secrets.ORG_TOKEN }}
-      run: sbt publish
+      run: sbt +publish

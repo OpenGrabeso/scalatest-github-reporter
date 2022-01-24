@@ -16,4 +16,4 @@ jobs:
     - name: Run tests
       env:
         ORG_TOKEN: ${{ secrets.ORG_TOKEN }}
-      run: sbt test
+      run: sbt +test
